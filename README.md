@@ -1,5 +1,5 @@
 # TweetTemplate_maker
-##使い方  
+## 使い方  
 ◯exeで動かす  
 1.templatemaker_exe.zipをダウンロードして解凍する  
 2.templatemaker.exeを実行する（動かしてる間に後ろの黒いウィンドウは消さないこと）  
