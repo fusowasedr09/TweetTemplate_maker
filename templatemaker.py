@@ -122,6 +122,7 @@ def checker():
 def intro_fix():
     text = TextBox3.get("1.0",tk.END)
     t = text.strip()
+    t = t.replace("\"", "")
     t = t.replace("　　　,","")
     t = t.replace("　　","　")
     t = t.replace("　","\n")
