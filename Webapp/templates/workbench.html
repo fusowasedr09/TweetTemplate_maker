@@ -1,0 +1,47 @@
+{% extends "base.html"%}
+
+{% block body %}
+
+<form action="/result" method="POST">
+<h3>ゲームタイトル（日本語）</h3>
+<select name="gametitle" size="5">
+{% for key in dict_data %}
+    <option>{{ dict_data[key]["ゲームタイトル（日本語用）"] }}</option>
+{% endfor %}
+</select>
+
+<p>種類選択<br>
+    <input type="radio" name="tweettype" value="1" checked>ゲーム開始時
+    <input type="radio" name="tweettype" value="2">ゲーム中
+    <input type="radio" name="tweettype" value="3">ゲーム終了時
+</p>
+
+<table>
+    <tr><td>ハッシュタグ:</td><td><input type="text" name="hashtag" width="60"></td></tr>
+    <tr><td>配信URL:</td><td><input type="text" name="streamingURL" width="60"></td></tr>
+    <tr><td>クリアタイム:</td><td><input type="text" name="cleartime" width="60"></td></tr>
+</table>
+項目設定が終わったら下の決定ボタンを押してください<br>
+<input type="submit" value="決定">
+
+<script type="text/javascript">
+    const hashtag = document.getElementById("hashtag")
+    const streamingURL = document.getElementById("streamingURL")
+
+    if (localStorage["hashtag"]){
+        hashtag.value = localStorage["hashtag"]
+    }
+    if (localStorage["streamingURL"]){
+        streamingURL.value = localStorage["streamingURL"]
+    }
+
+    hashtag.onkeydown = function (e) {
+        localStorage["hashtag"] = hashtag.value
+    }
+    streamingURL.onkeydown = function (e) {
+        localStorage["streamingURL"] = streamingURL.value
+    }
+
+</script>
+
+{% endblock %}

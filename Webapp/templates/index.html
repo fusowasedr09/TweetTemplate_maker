@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+
+{% block body %}
+
+<form action="/workbench" method="POST">
+<table>
+    <p>スケジュールURLを入力して送信してください</p>
+    <tr><td>URL:</td><td><input type="text" name="scheduleURL" width="60"></td></tr>
+</table>
+<input type="submit" value="送信">
+</form>
+
+{% endblock %}

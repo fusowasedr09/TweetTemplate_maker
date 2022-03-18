@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="/textfix" method="POST">
+<p>テンプレート</p>
+<textarea name="result" rows="10" cols="50">{{ result }}</textarea><br>
+<br>
+<p>解説者テキストをいい感じにする</p>
+<p>使い方:スケジュールの解説者紹介ツイートを下のテキストボックスに貼り付けて更新を押す</p>
+<textarea name="com_text" rows="10" cols="50">{{ fixtext }}</textarea>
+<button type="submit">更新</button>
+</form>
+<button type="button" onclick="history.back()">前のページに戻る</button>
+
+{% endblock %}
